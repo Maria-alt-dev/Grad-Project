@@ -11,3 +11,5 @@ const connectCloudinary = async () => {
 }
 
 export default connectCloudinary;
+
+//this is for cloud image and video management services

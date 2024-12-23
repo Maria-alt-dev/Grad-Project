@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 const Login = () => {
 
   const [state, setState] = useState('Admin')
-
+  const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -53,8 +53,9 @@ const Login = () => {
         </div>
         <div className='w-full '>
           <p>Password</p>
-          <input onChange={(e) => setPassword(e.target.value)} value={password} className='border border-[#DADADA] rounded w-full p-2 mt-1' type="password" required />
+          <input onChange={(e) => setPassword(e.target.value)} value={password} className='border border-[#DADADA] rounded w-full p-2 mt-1' type={showPassword?"text":"password"} required />
         </div>
+        <div className='flex gap-1'><input type='checkbox' onChange={()=>setShowPassword(!showPassword)}/>Show Password</div>
         <button className='bg-primary text-white w-full py-2 rounded-md text-base'>Login</button>
         {
           state === 'Admin'
